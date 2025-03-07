@@ -11,7 +11,7 @@ export default function Contact ({contacts, forDelete}) {
                     <span>{name}</span>
                     <span>{number}</span>
                 </div>
-                <button onClick={() => forDelete(id)}>Delete</button>
+                <button className={css.buttondelete} onClick={() => forDelete(id)}><span>Delete</span></button>
             </div>)}
             <div>{contacts.length === 0 && "Your Contacts Folder is empty!"}</div>
         </div>

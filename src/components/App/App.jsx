@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import './App.css'
+import css from '../App/App.module.css'
 import Contacts from '../../contacts.json'
 import ContactForm from '../ContactForm/ContactForm'
 import SearchBox from '../SearchBox/SearchBox'
@@ -13,7 +13,7 @@ function App() {
   const [contacts, setContacts] = useState(() => {
     const savedContacts = localStorage.getItem('contacts');
     const parsedContacts = JSON.parse(savedContacts);
-    console.log(parsedContacts.length)
+
     if (parsedContacts.length !== 0) {
       return parsedContacts;
     } 
@@ -51,7 +51,7 @@ function App() {
   );
 
   return (
-<div>
+<div className={css.container}>
   <h1>Phonebook</h1>
   <ContactForm onAdd={addContact}/>
   <SearchBox value={filter} onFilter={setFilter}/>

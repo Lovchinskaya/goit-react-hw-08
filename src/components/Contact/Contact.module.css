@@ -3,14 +3,28 @@
     margin-top: 40px;
     justify-content: space-around;
     flex-direction: column;
+    gap: 10px;
 }
 .info {
     display: flex;
     width: 100%;
     justify-content: space-around;
+    border: 2px solid rgb(22, 107, 50);
+    border-radius: 5px;
 
 }
 .inform {
     display: flex;
     flex-direction: column;
+}
+.buttondelete{
+    margin-top: 7px;
+    height: 30px;
+    width: 70px;
+    background-color: rgb(87, 198, 124);
+    border-radius: 5px;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    border: 2px solid rgb(22, 107, 50);
 }
