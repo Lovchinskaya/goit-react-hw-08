@@ -6,7 +6,7 @@
 .textinput {
     margin-top: 15px;
     height: 35px;
-    background-color: rgb(87, 198, 124);
+    /* background-color: rgb(87, 198, 124); */
     border-radius: 5px;
     padding: 5px;
     display: flex;
