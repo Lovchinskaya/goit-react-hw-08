@@ -5,10 +5,10 @@ import ContactForm from '../ContactForm/ContactForm'
 import SearchBox from '../SearchBox/SearchBox'
 import ContactList from '../ContactList/ContactList'
 
-
+// why not work?
 
 function App() {
-  // const [contact, setContact] = useState(Contacts);
+  
   const [filter, setFilter] = useState('');
   const [contacts, setContacts] = useState(() => {
     const savedContacts = localStorage.getItem('contacts');
