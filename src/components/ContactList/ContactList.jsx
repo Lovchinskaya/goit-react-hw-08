@@ -12,8 +12,7 @@ export default function ContactList ({contacts, onDelete}){
         <div className={css.contactinfo}>
                     {contacts.map((contacts) =>
                     <div className={css.info} key={nanoid()}>
-                        <Contact contacts={contacts}/>
-                        <button className={css.buttondelete} onClick={() => onDelete(contacts.id)}><span>Delete</span></button> 
+                        <Contact contacts={contacts} onDelete={onDelete}/>                        
                     </div>)}
                     <div>{contacts.length === 0 && "Your Contacts Folder is empty!"}</div>
                 </div>
