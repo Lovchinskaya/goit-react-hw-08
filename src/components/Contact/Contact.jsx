@@ -4,20 +4,20 @@ import { FaUser } from 'react-icons/fa';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 
 
-export default function Contact ({contacts, onDelete}) {
+export default function Contact ({contacts: {name, number, id}, onDelete}) {
 
     return (
         <>
             <div className={css.inform}>
                             <span className={css.contact}>
                             <FaUser className={css.icon} />
-                                {contacts.name}</span>
+                                {name}</span>
         
                             <span className={css.contact}>
                             <BsFillTelephoneFill className={css.icon} />
-                            {contacts.number}</span>
+                            {number}</span>
                         </div>
-                        <button className={css.buttondelete} onClick={() => onDelete(contacts.id)}><span>Delete</span></button>
+                        <button className={css.buttondelete} onClick={() => onDelete(id)}><span>Delete</span></button>
 
         </>
 

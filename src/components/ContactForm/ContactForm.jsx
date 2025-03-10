@@ -2,7 +2,8 @@ import css from "./ContactForm.module.css"
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from "yup";
 // import * as yup from 'yup';
-
+import { nanoid } from 'nanoid';
+import { useId } from 'react';
 
 
 const UserSchema = Yup.object().shape({
@@ -24,30 +25,37 @@ const UserSchema = Yup.object().shape({
 
 export default function ContactForm ({onAdd}){
     const handleSubmit = (values, actions) => {
-		console.log(values);
-        onAdd(values);
+        const newContact = {
+            id: nanoid(),
+            name: values.name,
+            number: values.number,
+          };
+		console.log(newContact);
+        onAdd(newContact);
 		actions.resetForm();
 	};
+
+    const newId = useId();
 
     return (
         <Formik initialValues={{
             name: " ",
-            number: " "
+            number: " ",
         }} 
         onSubmit={handleSubmit}
         validationSchema={UserSchema}
         >
 			<Form className={css.form}>
-            <label className={css.title}>Name</label>
-            <Field type="text" name="name" className={css.text}/>
+            <label className={css.title} htmlFor={`${newId}-number`}>Name</label>
+            <Field type="text" name="name" className={css.text} id={`${newId}-name`}/>
             <ErrorMessage
             className={css.error}
             name="name"
             component="span"
           />
            
-            <label className={css.title}>Number</label>
-            <Field type="text" name="number" className={css.text}/>
+            <label className={css.title} htmlFor={`${newId}-number`}>Number</label>
+            <Field type="text" name="number" className={css.text} id={`${newId}-number`}/>
             <ErrorMessage
             className={css.error}
             name="number"
