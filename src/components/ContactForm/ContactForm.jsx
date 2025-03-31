@@ -4,6 +4,9 @@ import * as Yup from "yup";
 // import * as yup from 'yup';
 import { nanoid } from 'nanoid';
 import { useId } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addContact } from "../../redux/contactsSlice";
+
 
 
 const UserSchema = Yup.object().shape({
@@ -12,6 +15,8 @@ const UserSchema = Yup.object().shape({
     number: Yup.string().min(4, "Too Short!").max(50, "Too Long!")
     .required("Please enter your number"),
 });
+
+
 
 // const phoneSchema = yup.string()
 //   .phone('IN', true, '${path} is invalid')
@@ -24,6 +29,8 @@ const UserSchema = Yup.object().shape({
 
 
 export default function ContactForm ({onAdd}){
+    const dispatch = useDispatch();
+
     const handleSubmit = (values, actions) => {
         const newContact = {
             id: nanoid(),
@@ -31,12 +38,11 @@ export default function ContactForm ({onAdd}){
             number: values.number,
           };
 		console.log(newContact);
-        onAdd(newContact);
+        dispatch(addContact({ ...values, id: nanoid() }));
 		actions.resetForm();
 	};
 
     const newId = useId();
-
     return (
         <Formik initialValues={{
             name: " ",

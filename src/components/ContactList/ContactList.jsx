@@ -1,20 +1,23 @@
 import css from '../ContactList/ContactList.module.css'
 import Contact from '../Contact/Contact'
-import { nanoid } from 'nanoid';
+import { useSelector } from "react-redux";
 
-export default function ContactList ({contacts, onDelete}){
-    // let id=nanoid();
-    return (
-        // <div>
-        //     <Contact contacts={contacts} forDelete={onDelete}/>
-        // </div>
-         
-        <div className={css.contactinfo}>
-                    {contacts.map((contacts) =>
-                    <div className={css.info} key={contacts.id}>
-                        <Contact contacts={contacts} onDelete={onDelete}/>                        
-                    </div>)}
-                    <div>{contacts.length === 0 && "Your Contacts Folder is empty!"}</div>
-                </div>
-    )
-}
+export default function ContactList (){
+    const contacts = useSelector((state) => state.contacts.items);
+  const filters = useSelector((state) => state.filters.name);
+
+  const visibleContacts = contacts.filter((contact) =>
+    contact.name.toLowerCase().includes(filters.toLocaleLowerCase())
+  );
+    
+        return (   
+            <div className={css.contactinfo}>
+                        {visibleContacts.map((contacts) =>
+                        <div className={css.info} key={contacts.id}>
+                            <Contact contact={contacts} />                        
+                        </div>)}
+                        
+                    </div>
+        )
+    }
+
