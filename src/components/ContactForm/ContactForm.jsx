@@ -4,8 +4,8 @@ import * as Yup from "yup";
 // import * as yup from 'yup';
 import { nanoid } from 'nanoid';
 import { useId } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from "../../redux/contactsSlice";
+import { useDispatch } from 'react-redux';
+import { addContact } from "../../redux/contactsOps";
 
 
 
@@ -38,7 +38,7 @@ export default function ContactForm ({onAdd}){
             number: values.number,
           };
 		console.log(newContact);
-        dispatch(addContact({ ...values, id: nanoid() }));
+        dispatch(addContact(values));
 		actions.resetForm();
 	};
 
