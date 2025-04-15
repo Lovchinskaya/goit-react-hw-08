@@ -3,7 +3,7 @@ import { lazy, Suspense } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { selectIsRefreshing } from "../../redux/auth/selectors";
-import Layout from "../Layout/Layout";
+import Layout from "../Layout/layout";
 import { refreshUser } from "../../redux/auth/operations";
 import "./App.module.css";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -60,17 +60,6 @@ export default function App() {
     </Layout>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
