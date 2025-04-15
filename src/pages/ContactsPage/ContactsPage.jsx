@@ -24,7 +24,7 @@ export default function ContactsPage() {
 
   return (
     <div>
-      <h1>Your Phonebook</h1>
+      <h1>Your Contact Book</h1>
       <ContactForm />
       {isLoading && `Loading message`}
       {isError && `Error` }

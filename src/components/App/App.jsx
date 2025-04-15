@@ -7,8 +7,9 @@ import { refreshUser } from "../../redux/auth/operations";
 import "./App.module.css";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import RestrictedRoute from "../RestrictedRoute/RestrictedRoute";
-import Layout from "../Layout/Layout";
+import Layout from "../Layout/layout";
 
+// const Layout = lazy (() => import("../Layout/Layout"));
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const RegisterPage = lazy(() => import("../../pages/RegistrationPage/RegistrationPage")
 );

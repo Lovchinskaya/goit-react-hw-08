@@ -1,6 +1,6 @@
 import PageTitle from "../../components/PageTitle/PageTitle";
-import RegistrationForm from "../../components/registrationForm/RegistrationForm";
-
+import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
+//done import
 export default function RegisterPage() {
   return (
     <div>
