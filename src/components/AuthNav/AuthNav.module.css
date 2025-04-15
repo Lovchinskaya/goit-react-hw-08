@@ -1,0 +1,21 @@
+.navAuthLinks {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+.link {
+    width: 50px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px;
+    font-weight: 700;
+    color: #2a363b;
+  }
+.link:hover {
+    color: rgb(4, 122, 107);
+}
+
+.link:active {
+    color: rgb(4, 122, 107);
+    border-bottom: 2px solid rgb(4, 122, 107);
+}

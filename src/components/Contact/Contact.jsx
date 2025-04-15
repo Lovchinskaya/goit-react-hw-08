@@ -2,7 +2,7 @@ import css from "./Contact.module.css";
 // import { nanoid } from 'nanoid';
 import { FaUser } from 'react-icons/fa';
 import { BsFillTelephoneFill } from 'react-icons/bs';
-import { deleteContact } from "../../redux/contactsOps";
+import { deleteContact } from "../../redux/contacts/operations";
 import { useDispatch } from "react-redux";
 
 export default function Contact ({ contact }) {
