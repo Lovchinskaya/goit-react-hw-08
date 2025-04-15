@@ -3,11 +3,11 @@ import { lazy, Suspense } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { selectIsRefreshing } from "../../redux/auth/selectors";
-import Layout from "../Layout/layout";
 import { refreshUser } from "../../redux/auth/operations";
 import "./App.module.css";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import RestrictedRoute from "../RestrictedRoute/RestrictedRoute";
+import Layout from "../frame/Layout";
 
 const HomePage = lazy(() => import("../../pages/homePage/HomePage"));
 const RegisterPage = lazy(() => import("../../pages/RegistrationPage/RegistrationPage")
@@ -54,13 +54,8 @@ export default function App() {
               <PrivateRoute component={<ContactsPage />} redirectTo="/login" />
             }
           />
-         
         </Routes>
       </Suspense>
     </Layout>
   );
 }
-
-
-
-
